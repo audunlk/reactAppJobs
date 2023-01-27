@@ -33,10 +33,12 @@ app.use(express.static('public'));
 /**
  * Create job board data
  */
+let dateObj = new Date().toDateString()
+
 const jobs = [
   {
     id: '1',
-    createdAt: "2019-12-12T21:36:05.887Z",
+    createdAt: dateObj,
     title: "Junior JavaScript Developer",
     email: "jobs@unicorn.com",
     company: "Unicorn Labs",
@@ -45,7 +47,7 @@ const jobs = [
   },
   {
     id: '2',
-    createdAt: "2019-12-12T21:36:05.887Z",
+    createdAt: dateObj,
     title: "Senior Backend Developer",
     email: "jobs@wiggle.com",
     company: "Wiggle Inc",
@@ -54,7 +56,7 @@ const jobs = [
   },
   {
     id: '3',
-    createdAt: "2019-12-12T21:36:05.887Z",
+    createdAt: dateObj,
     title: "Data Scientist",
     email: "jobs@nosebook.com",
     company: "Nosebook",
@@ -63,7 +65,7 @@ const jobs = [
   },
   {
     id: '4',
-    createdAt: "2019-12-12T21:36:05.887Z",
+    createdAt: dateObj,
     title: "Lead Designer",
     email: "jobs@mediocregames.com",
     company: "Mediocre Games",
@@ -83,7 +85,7 @@ function getJobById(id) {
 function addJob(job) {
   const newJob = {
     id: Date.now(),
-    createdAt: new Date(),
+    createdAt: new Date().toDateString(),
     title: job.title,
     email: job.email,
     company: job.company,
