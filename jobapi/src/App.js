@@ -10,7 +10,7 @@ class App extends React.Component {
       isLoading: true,
       showForm: false,
       showBrowse: true,
-      jobsInfoId: "",
+   
     };
   }
 
@@ -20,6 +20,7 @@ class App extends React.Component {
     this.setState({ jobs: data });
     this.setState({ isLoading: false });
     this.setState({ showForm: false });
+  
   }
 
   handleSearchChange = (event) => {
@@ -38,11 +39,10 @@ class App extends React.Component {
   };
 
   handleLoadCard = (event) => {
-    this.setState({ showJobCard: true, showBrowse: false });
+    this.setState({ showJobCard: true, showBrowse: false, showForm: false });
     const id = event.target.id;
     console.log(id)
     this.setState({ jobsInfoId: id });
-    
   };
 
   handlePostForm = (event) => {
@@ -75,8 +75,10 @@ class App extends React.Component {
       .then((data) => {
         this.setState({
           jobs: [...this.state.jobs, data],
+          
         });
       });
+    
   };
 
   handleClearInput = (event) => {
@@ -85,6 +87,8 @@ class App extends React.Component {
     event.target.email.value = "";
     event.target.company.value = "";
     event.target.homepage.value = "";
+    console.log(`
+    ${this.state}`)
   };
 
   render() {
@@ -95,7 +99,8 @@ class App extends React.Component {
         );
 
     const filteredJob = this.state.jobs.filter((job) => {
-      return job.id.includes(this.state.jobsInfoId);
+      return job.id.toString().includes(this.state.jobsInfoId);
+      
     });
 
 
@@ -105,9 +110,9 @@ class App extends React.Component {
           /* BROWSER START */
           <div className="App">
             <Header
-              handleLoadBrowse={this.handleLoadBrowse}
+              handleLoadBrowse={this.handleLoadBrowse.bind}
               handleLoadForm={this.handleLoadForm}
-              //handleLoadCard={this.handleLoadCard}
+             
             />
             <div className="browseField">
               <div className="browseJobContainer" >
@@ -120,8 +125,8 @@ class App extends React.Component {
                 {this.state.isLoading ? (
                   <p>Loading...</p>
                 ) : (
-                  filteredJobs.map((job) => (
-                    <div className="browseJobCard" onClick={this.handleLoadCard} id={job.id}>
+                  filteredJobs.map((job, i) => (
+                    <div className="browseJobCard" onClick={this.handleLoadCard} id={job.id} key={i}>
                       <div className="browseJobTitle">
                         <h3>{job.title}</h3>
                       </div>
@@ -166,7 +171,7 @@ class App extends React.Component {
                     name="homepage"
                     placeholder="Homepage(optional)"
                   />
-                  <button type="submit" onClick={this.handleClearInput}>
+                  <button type="submit" onClick={this.handleClearInput} >
                     Post
                   </button>
                 </form>
@@ -183,15 +188,15 @@ class App extends React.Component {
                 handleLoadBrowse={this.handleLoadBrowse}
                 handleLoadForm={this.handleLoadForm}
               />
-              <div class="browseField">
+              <div className="browseField">
                 <div className="cardContainer">
                   <div className="card">
-                    {filteredJob.map((job) => (
-                      <div className="cardJob">
+                    {filteredJob.map((job, i) => (
+                      <div className="cardJob" key={i}>
                         <div className="cardJobTitle">
                           <h3>{job.title}</h3>
                         </div>
-                        <div class="cardContent">
+                        <div className="cardContent">
                           <div className="cardLeft">
                             <p>{job.createdAt}</p>
                             <p>{job.company}</p>
