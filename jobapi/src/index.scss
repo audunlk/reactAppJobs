@@ -1,0 +1,183 @@
+
+  
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  @mixin button{
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+    
+    cursor: pointer;
+}
+
+
+  .header{
+    background-color: #1e1e1e;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    .headerText{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: center; 
+        p{
+            margin-top:1rem;
+        }
+    }
+  }
+  
+  
+  .headerBtn{
+    @include button;
+
+    &:hover{
+      background-color: white;
+      color: #1e1e1e;
+    }
+  }
+ 
+  
+  
+ 
+  .browseField{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .formContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+        gap: 1rem;
+        input{
+        width: 100%;
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 1rem;
+        }
+        .descriptionArea{
+        width: 100%;
+        padding-bottom: 4rem;
+        }
+        button{
+            @include button;
+            
+            width:100%;
+        
+            &:hover{
+              background-color: white;
+              color: #1e1e1e;
+              border: 1px solid #1e1e1e;
+            }
+        }
+      }
+  }
+
+  @mixin banners{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 60%;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  .browseJobContainer{
+    @include banners;
+  }
+  
+  .inputfield{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  @mixin cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 100%;
+    align-items: flex-start;
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: left;
+  }
+  
+  .browseJobCard{
+    @include cards;
+  }
+
+  .cardContainer{
+    @include banners;
+    width: 40%;
+    .card{
+        @include cards;
+        .cardJobTitle{
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding-left: 1rem;
+        }
+        .cardContent{
+            display: flex;
+            flex-direction: row;
+            padding: 1rem;
+            
+          }
+        .cardLeft{
+            margin-right: 1rem;
+            
+        }
+        .cardJobDescription{
+            color: grey;
+            margin-left: 2rem;
+        }
+        
+      
+        
+      }
+      
+  }
+
+  
+
+  

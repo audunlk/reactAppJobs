@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  background-color: #1e1e1e;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.header .headerText {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.header .headerText p {
+  margin-top: 1rem;
+}
+
+.headerBtn {
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+.headerBtn:hover {
+  background-color: white;
+  color: #1e1e1e;
+}
+
+.browseField {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  gap: 1rem;
+}
+.formContainer form input {
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.formContainer form .descriptionArea {
+  width: 100%;
+  padding-bottom: 4rem;
+}
+.formContainer form button {
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+.formContainer form button:hover {
+  background-color: white;
+  color: #1e1e1e;
+  border: 1px solid #1e1e1e;
+}
+
+.browseJobContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 60%;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1rem;
+}
+
+.inputfield {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.browseJobCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+  align-items: flex-start;
+  border: 1px solid grey;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 60%;
+  align-items: flex-start;
+  text-align: left;
+  padding: 1rem;
+  width: 40%;
+}
+.cardContainer .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+  align-items: flex-start;
+  border: 1px solid grey;
+  border-radius: 5px;
+  text-align: left;
+}
+.cardContainer .card .cardJobTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+.cardContainer .card .cardContent {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+}
+.cardContainer .card .cardLeft {
+  margin-right: 1rem;
+}
+.cardContainer .card .cardJobDescription {
+  color: grey;
+  margin-left: 2rem;
+}/*# sourceMappingURL=index.css.map */
